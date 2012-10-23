@@ -8,18 +8,47 @@ define([
     'backbone'
 ], 
 function($, _, Backbone) {
-	var module = Backbone.Model.extend({  
-        initialize: function(defaults){ 
-            if (debug) console.log(defaults);
-            this.defaults = _.extend(this.defaults, defaults);
-            if (debug) console.log(this.defaults.name);
+    var module = {};
+
+	module.model = Backbone.Model.extend({  
+        initialize: function(options){ 
+            this.events();
         },
-        defaults: {  
-            name: 'Default title'
-        }  
+        events: function(){
+            this.on('event', function(){
+                console.log('An event on model');
+            })
+        },
+        destroy: function(){
+            this.off();
+        }
     });
-    
-    if (debug) console.log(module);
+
+    module.view = Backbone.View.extend({
+        initialize: function(options){
+            if (debug) console.log(options);
+
+            this.model = new module.model(options);
+
+            this.options = _.extend(this.options, options);
+
+            if (debug) console.log(this.options.name);
+
+            this.events();
+        },
+        options: {  
+            name: 'Default title'
+        },
+        events: function(){
+            this.on('event', function(){
+                console.log('An event on view');
+            })
+        },
+        destroy: function(){
+            this.off();
+            this.model.destroy();
+        }
+    });
     
     return module;
 });

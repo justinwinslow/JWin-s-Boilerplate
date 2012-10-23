@@ -29,11 +29,15 @@ requirejs.config({
 
 // Start app
 requirejs(['jquery', 'underscore', 'backbone', 'somemodule'], function   ($, _, Backbone, somemodule) {
+    if(!window.myApp){
+        myApp = {};
+    }
+
     if (debug) console.log($);
     if (debug) console.log(_);
     if (debug) console.log(Backbone);
     if (debug) console.log(somemodule);
 
-    var myModule = new somemodule({name: 'My New Module'});
-    //myModule.initialize({name: 'My New Module'});
+    myApp.myModule = new somemodule.view({name: 'My New Module'});
+    myApp.myModule.trigger('event');
 });
