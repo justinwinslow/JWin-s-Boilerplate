@@ -15,8 +15,8 @@ function($, _, Backbone) {
             this.events();
         },
         events: function(){
-            this.on('event', function(){
-                console.log('An event on model');
+            this.on('event', function(data){
+                console.log('An event on model', data);
             })
         },
         destroy: function(){
@@ -40,8 +40,8 @@ function($, _, Backbone) {
             name: 'Default title'
         },
         events: function(){
-            this.on('event', function(){
-                console.log('An event on view');
+            this.on('event', function(data){
+                console.log('An event on view', data);
             })
         },
         destroy: function(){

@@ -39,5 +39,5 @@ requirejs(['jquery', 'underscore', 'backbone', 'somemodule'], function   ($, _, 
     if (debug) console.log(somemodule);
 
     myApp.myModule = new somemodule.view({name: 'My New Module'});
-    myApp.myModule.trigger('event');
+    myApp.myModule.trigger('event', {event: 'myEvent'});
 });
