@@ -8,8 +8,10 @@ define([
     'backbone'
 ], 
 function($, _, Backbone) {
+    // Create object to store the entire module
     var module = {};
 
+    // Define module's model
     module.model = Backbone.Model.extend({  
         initialize: function(options){
             this.options = _.extend(this.options, options);
@@ -26,8 +28,10 @@ function($, _, Backbone) {
         options: {}
     });
 
+    // Create an array for desparate views
     module.view = [];
 
+    // Define module's primary view
     module.view[0] = Backbone.View.extend({
         initialize: function(options){
             if (debug) console.log(options);
@@ -69,6 +73,7 @@ function($, _, Backbone) {
         }
     });
 
+    // Define module's secondary view
     module.view[1] = Backbone.View.extend({
         initialize: function(options){
             if (debug) console.log(options);

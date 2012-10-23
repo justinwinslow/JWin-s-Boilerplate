@@ -1,11 +1,13 @@
 /* 
     APP CONFIG & INIT
 */
+
+// Set debug mode [think about modifying this to be dynamic]
 window.debug = true;
 
 if (debug) console.log('init');
 
-// Config
+// Require config
 requirejs.config({
     paths: {
         // Libraries
