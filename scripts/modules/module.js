@@ -1,5 +1,5 @@
 /*
-	BASIC MODULE DEFINITION
+    BASIC MODULE DEFINITION
 */
 
 define([
@@ -10,7 +10,7 @@ define([
 function($, _, Backbone) {
     var module = {};
 
-	module.model = Backbone.Model.extend({  
+    module.model = Backbone.Model.extend({  
         initialize: function(options){
             this.options = _.extend(this.options, options);
             this.events();
