@@ -14,6 +14,7 @@ requirejs.config({
         jquery: 'lib/jquery',
         underscore: 'lib/underscore',
         backbone: 'lib/backbone',
+        handlebars: 'lib/handlebars',
         // Modules
         somemodule: 'modules/module'
     },
@@ -26,11 +27,15 @@ requirejs.config({
             deps: ['jquery'],
             exports: '_'
         },
+        handlebars: {
+            deps: [],
+            exports: 'Handlebars'
+        }
     }
 });
 
 // Start app
-requirejs(['jquery', 'underscore', 'backbone', 'somemodule'], function   ($, _, Backbone, somemodule) {
+requirejs(['jquery', 'underscore', 'backbone', 'handlebars', 'somemodule'], function   ($, _, Backbone, Handlebars, somemodule) {
     if(!window.myApp){
         myApp = {};
     }
@@ -38,6 +43,7 @@ requirejs(['jquery', 'underscore', 'backbone', 'somemodule'], function   ($, _, 
     if (debug) console.log($);
     if (debug) console.log(_);
     if (debug) console.log(Backbone);
+    if (debug) console.log(Handlebars);
     if (debug) console.log(somemodule);
 
     myApp.myModule = new somemodule.view[1]({name: 'My New Module'});
