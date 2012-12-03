@@ -57,10 +57,8 @@ requirejs(
         if (debug) console.log(Handlebars);
         if (debug) console.log(somemodule);
 
-        if(!window.myApp){
-            myApp = {};
-        }
-
+        window.myApp = window.myApp = {};
+        
         myApp.myModule = new somemodule.view.main({name: 'My New Module'});
         myApp.myModule.trigger('myEvent', {event: 'myEvent'});
     }
