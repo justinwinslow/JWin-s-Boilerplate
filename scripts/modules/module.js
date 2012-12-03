@@ -11,8 +11,10 @@ define([
     'text!../styles/module.css'
 ],
 function($, _, Backbone, Modernizr, css, myCSS) {
-    // Create object to store the entire module
+    if (debug) console.log(myCSS);
     css.appendStyles(myCSS);
+
+    // Create object to store the entire module
     var module = {};
 
     // Define module's model
@@ -32,7 +34,7 @@ function($, _, Backbone, Modernizr, css, myCSS) {
         options: {}
     });
 
-    // Create an array for desparate views
+    // Create an for object desparate views
     module.view = {};
 
     if(Modernizr.canvas){
@@ -55,7 +57,7 @@ function($, _, Backbone, Modernizr, css, myCSS) {
                 this.$el = $('<div class="module" />');
 
                 $('body').append(this.$el);
-                
+
                 this.$el.append('<p>' + this.options.name + ' w/ canvas</p>');
 
                 this.$el.append('<canvas id="myCanvas" width="300" height="300"/>');
