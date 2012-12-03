@@ -1,4 +1,4 @@
-/* 
+/*
     APP CONFIG & INIT
 */
 
@@ -15,8 +15,12 @@ requirejs.config({
         underscore: 'lib/underscore',
         backbone: 'lib/backbone',
         handlebars: 'lib/handlebars',
+        modernizr: 'lib/modernizr',
+        excanvas: 'lib/excanvas',
+        text: 'lib/text',
         // Modules
-        somemodule: 'modules/module'
+        somemodule: 'modules/module',
+        css: 'modules/css'
     },
     shim: {
         backbone: {
@@ -30,22 +34,34 @@ requirejs.config({
         handlebars: {
             deps: [],
             exports: 'Handlebars'
+        },
+        modernizr: {
+            exports: 'Modernizr'
         }
     }
 });
 
 // Start app
-requirejs(['jquery', 'underscore', 'backbone', 'handlebars', 'somemodule'], function   ($, _, Backbone, Handlebars, somemodule) {
-    if(!window.myApp){
-        myApp = {};
+requirejs(
+    [
+        'jquery',
+        'underscore',
+        'backbone',
+        'handlebars',
+        'somemodule'
+    ],
+    function ($, _, Backbone, Handlebars, somemodule) {
+        if (debug) console.log($);
+        if (debug) console.log(_);
+        if (debug) console.log(Backbone);
+        if (debug) console.log(Handlebars);
+        if (debug) console.log(somemodule);
+
+        if(!window.myApp){
+            myApp = {};
+        }
+
+        myApp.myModule = new somemodule.view.main({name: 'My New Module'});
+        myApp.myModule.trigger('myEvent', {event: 'myEvent'});
     }
-
-    if (debug) console.log($);
-    if (debug) console.log(_);
-    if (debug) console.log(Backbone);
-    if (debug) console.log(Handlebars);
-    if (debug) console.log(somemodule);
-
-    myApp.myModule = new somemodule.view[1]({name: 'My New Module'});
-    myApp.myModule.trigger('myEvent', {event: 'myEvent'});
-});
+);

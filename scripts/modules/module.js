@@ -3,16 +3,20 @@
 */
 
 define([
-    'jquery', 
-    'underscore', 
-    'backbone'
-], 
-function($, _, Backbone) {
+    'jquery',
+    'underscore',
+    'backbone',
+    'modernizr',
+    'css',
+    'text!../styles/module.css'
+],
+function($, _, Backbone, Modernizr, css, myCSS) {
     // Create object to store the entire module
+    css.appendStyles(myCSS);
     var module = {};
 
     // Define module's model
-    module.model = Backbone.Model.extend({  
+    module.model = Backbone.Model.extend({
         initialize: function(options){
             this.options = _.extend(this.options, options);
             this.events();
@@ -20,7 +24,7 @@ function($, _, Backbone) {
         events: function(){
             this.on('event', function(data){
                 console.log('An event on model', data);
-            })
+            });
         },
         destroy: function(){
             this.off();
@@ -29,91 +33,120 @@ function($, _, Backbone) {
     });
 
     // Create an array for desparate views
-    module.view = [];
+    module.view = {};
 
-    // Define module's primary view
-    module.view[0] = Backbone.View.extend({
-        initialize: function(options){
-            if (debug) console.log(options);
+    if(Modernizr.canvas){
+        // Define module's primary view
+        module.view.main = Backbone.View.extend({
+            initialize: function(options){
+                if (debug) console.log(options);
 
-            this.model = new module.model(options);
+                this.model = new module.model(options);
 
-            this.options = _.extend(this.options, options);
+                this.options = _.extend(this.options, options);
 
-            if (debug) console.log(this.options.name);
+                if (debug) console.log(this.options.name);
 
-            this.render();
-        },
-        render: function(){
-            if (debug) console.log('render');
+                this.render();
+            },
+            render: function(){
+                if (debug) console.log('render');
 
-            this.$el = $('<p>' + this.options.name + '</p>');
+                this.$el = $('<div class="module" />');
 
-            $('body').append(this.$el);
-        },
-        events: function(){
-            if (debug) console.log('events');
-            var self = this;
+                $('body').append(this.$el);
+                
+                this.$el.append('<p>' + this.options.name + ' w/ canvas</p>');
 
-            this.on('myEvent', function(data){
-                console.log('An event on view 0', data);
-            })
+                this.$el.append('<canvas id="myCanvas" width="300" height="300"/>');
 
-            this.$el.on('click', function(event){
-                console.log(self.$el.text() + ' 0');
-            });
-        },
-        destroy: function(){
-            this.off();
-            this.$el.off();
-            this.model.destroy();
-        },
-        options: {  
-            name: 'Default title'
-        }
-    });
+                var myCanvas = document.getElementById('myCanvas'),
+                    canvasContext = myCanvas.getContext('2d');
 
-    // Define module's secondary view
-    module.view[1] = Backbone.View.extend({
-        initialize: function(options){
-            if (debug) console.log(options);
+                canvasContext.fillStyle = '#f00';
+                canvasContext.fillRect(0, 0, 150, 150);
+            },
+            events: function(){
+                if (debug) console.log('events');
+                var self = this;
 
-            this.model = new module.model(options);
+                this.on('myEvent', function(data){
+                    if (debug) console.log('An event on view 0', data);
+                });
 
-            this.options = _.extend(this.options, options);
+                this.$el.on('click', function(event){
+                    if (debug) console.log(self.$el.text() + ' 0');
+                });
+            },
+            destroy: function(){
+                this.off();
+                this.$el.off();
+                this.model.destroy();
+            },
+            options: {
+                name: 'Default title'
+            }
+        });
 
-            if (debug) console.log(this.options.name);
+    }else{
+        // Define module's primary view canvas fallback
+        module.view.main = Backbone.View.extend({
+            initialize: function(options){
+                if (debug) console.log(options);
 
-            this.render();
-        },
-        render: function(){
-            if (debug) console.log('render');
+                this.model = new module.model(options);
 
-            this.$el = $('<p>' + this.options.name + '</p>');
+                this.options = _.extend(this.options, options);
 
-            $('body').append(this.$el);
-        },
-        events: function(){
-            if (debug) console.log('events');
-            var self = this;
+                if (debug) console.log(this.options.name);
 
-            this.on('myEvent', function(data){
-                console.log('An event on view 1', data);
-            })
+                this.render();
+            },
+            render: function(){
+                if (debug) console.log('render');
 
-            this.$el.on('click', function(event){
-                console.log(self.$el.text() + ' 1');
-            });
-        },
-        destroy: function(){
-            this.off();
-            this.$el.off();
-            this.model.destroy();
-        },
-        options: {  
-            name: 'Default title'
-        }
-    });
+                this.$el = $('<div class="module" />');
+                
+                $('body').append(this.$el);
+
+                this.$el.append('<p>' + this.options.name + ' w/o canvas</p>');
+                
+                require(['excanvas'], function(){
+                    this.$el.append('<canvas id="myCanvas" width="300" height="300"/>');
+
+                    var myCanvas = document.getElementById('myCanvas');
+
+                    G_vmlCanvasManager.initElement(myCanvas);
+                    
+                    var canvasContext = myCanvas.getContext('2d');
+
+                    canvasContext.fillStyle = '#f00';
+                    canvasContext.fillRect(0, 0, 150, 150);
+                });
+            },
+            events: function(){
+                if (debug) console.log('events');
+                var self = this;
+
+                this.on('myEvent', function(data){
+                    console.log('An event on view 1', data);
+                });
+
+                this.$el.on('click', function(event){
+                    console.log(self.$el.text() + ' 1');
+                });
+            },
+            destroy: function(){
+                this.off();
+                this.$el.off();
+                this.model.destroy();
+            },
+            options: {
+                name: 'Default title'
+            }
+        });
+
+    }
     
     return module;
 });

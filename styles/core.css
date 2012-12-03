@@ -379,8 +379,8 @@ table {
 */
 
 body {
-  background: #fff;
-  color:#111;
+  background: #efefef;
+  color:#222;
   font-size: 85%; /* Resets 1em to 12px */
   font-family: Verdana, Arial, Sans-Serif;
 }
