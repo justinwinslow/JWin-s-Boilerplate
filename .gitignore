@@ -1,7 +1,8 @@
-# Clarity Files #
+# App Files #
 #################
 
 node_modules
+build
 
 # OS Generated Files #
 ######################
