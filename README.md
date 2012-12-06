@@ -1,4 +1,4 @@
-JWin's Boiler Plate
+JWin's Boilerplate
 ===================
 
 This is basically just a playground for boilerplate experimentations. Not recommended for public consumption.
