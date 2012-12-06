@@ -18,7 +18,7 @@ From the project root run "node server.js". The server is just a pass through ri
 
 #### Running a Build
 
-From the project root run "node r.js -o build.js". Assets are built to scripts.build/ and there's no automagic pathing at the moment so the path to the scripts file would have to be changed in the html.
+From the project root run "r.js -o build.js". Assets are built to scripts.build/ and there's no automagic pathing at the moment so the path to the scripts file would have to be changed in the html.
 
 #### ToDo
 
