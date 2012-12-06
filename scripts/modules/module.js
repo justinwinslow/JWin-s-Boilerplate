@@ -7,8 +7,8 @@ define([
     'underscore',
     'backbone',
     'modernizr',
-    'css',
-    'text!../styles/module.css'
+    //'css',
+    'css!../styles/module.css'
 ],
 function($, _, Backbone, Modernizr, css, myCSS) {
     if (debug) console.log(myCSS);
@@ -108,18 +108,18 @@ function($, _, Backbone, Modernizr, css, myCSS) {
                 if (debug) console.log('render');
 
                 this.$el = $('<div class="module" />');
-                
+
                 $('body').append(this.$el);
 
                 this.$el.append('<p>' + this.options.name + ' w/o canvas</p>');
-                
+
                 require(['excanvas'], function(){
                     this.$el.append('<canvas id="myCanvas" width="300" height="300"/>');
 
                     var myCanvas = document.getElementById('myCanvas');
 
                     G_vmlCanvasManager.initElement(myCanvas);
-                    
+
                     var canvasContext = myCanvas.getContext('2d');
 
                     canvasContext.fillStyle = '#f00';
@@ -149,6 +149,6 @@ function($, _, Backbone, Modernizr, css, myCSS) {
         });
 
     }
-    
+
     return module;
 });
