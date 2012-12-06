@@ -3,7 +3,7 @@
 */
 
 // Set debug mode [think about modifying this to be dynamic]
-window.debug = false;
+window.debug = true;
 
 if (debug) console.log('init');
 
