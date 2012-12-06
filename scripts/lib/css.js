@@ -15,8 +15,8 @@ define(['text'], {
 
                 head.appendChild(style);
             }
-        });
 
-        load();
+            load();
+        });
     }
 });
