@@ -10,7 +10,7 @@ This is basically just a playground for boilerplate experimentations. Not recomm
 
 ###### Getting Set Up
 
-From the project root folder run "npm install" to install require node packages
+From the project root folder run "npm install" to install required node packages
 
 ###### Running the Server
 
