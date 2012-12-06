@@ -1,7 +1,7 @@
 {
   "name": "jwin-boilerplate",
   "description": "JWin's Boilerplate",
-  "version": "0.0.1",
+  "version": "0.1",
   "private": true,
   "dependencies": {
     "express": "3.x",
