@@ -7,7 +7,7 @@
 define(['text'], {
     load: function (name, require, load, config) {
         require(['text!' + name], function (css) {
-            if (typeof window !== "undefined" && window.document){
+            if (typeof window !== "undefined" && window.document) {
                 //Store DOM elements
                 var head = document.getElementsByTagName('head')[0],
                     style = document.createElement('style');
@@ -15,9 +15,9 @@ define(['text'], {
                 style.type = 'text/css';
 
                 //Check if the element has the styleSheet property
-                if(style.styleSheet){
+                if (style.styleSheet) {
                     style.styleSheet.cssText = css;
-                }else{
+                } else {
                     style.appendChild(document.createTextNode(css));
                 }
 
