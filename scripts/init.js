@@ -3,7 +3,7 @@
 */
 
 // Set debug mode [think about modifying this to be dynamic]
-window.debug = true;
+window.debug = false;
 
 if (debug) console.log('init');
 
@@ -18,9 +18,9 @@ requirejs.config({
         modernizr: 'lib/modernizr',
         excanvas: 'lib/excanvas',
         text: 'lib/text',
+        css: 'lib/css',
         // Modules
-        somemodule: 'modules/module',
-        css: 'modules/css'
+        somemodule: 'modules/module'
     },
     shim: {
         backbone: {
@@ -58,7 +58,7 @@ requirejs(
         if (debug) console.log(somemodule);
 
         window.myApp = window.myApp = {};
-        
+
         myApp.myModule = new somemodule.view.main({name: 'My New Module'});
         myApp.myModule.trigger('myEvent', {event: 'myEvent'});
     }
