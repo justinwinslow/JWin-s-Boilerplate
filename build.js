@@ -19,7 +19,6 @@
                 'css',
                 'module'
             ],
-
             exclude: []
         }
     ]
