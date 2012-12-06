@@ -24,3 +24,4 @@ From the project root run "node r.js -o build.js". Assets are built to scripts.b
 
 * Set up testing
 * Automate build/path switching
+* Integrate handlebars template
