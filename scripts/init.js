@@ -18,7 +18,7 @@ requirejs.config({
         modernizr: 'lib/modernizr',
         excanvas: 'lib/excanvas',
         text: 'lib/text',
-        css: 'lib/css2',
+        css: 'lib/css',
         // Modules
         somemodule: 'modules/module'
     },

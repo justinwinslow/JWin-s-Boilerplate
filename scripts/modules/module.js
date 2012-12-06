@@ -7,13 +7,9 @@ define([
     'underscore',
     'backbone',
     'modernizr',
-    //'css',
     'css!../styles/module.css'
 ],
-function($, _, Backbone, Modernizr, css, myCSS) {
-    if (debug) console.log(myCSS);
-    css.appendStyles(myCSS);
-
+function($, _, Backbone, Modernizr) {
     // Create object to store the entire module
     var module = {};
 

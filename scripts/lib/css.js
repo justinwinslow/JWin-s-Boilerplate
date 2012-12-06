@@ -1,6 +1,6 @@
-define([], function(){
-    var css = {
-        appendStyles: function(css){
+define(['text'], {
+    load: function (name, require, load, config) {
+        require(['text!' + name], function (css) {
             var head = document.getElementsByTagName('head')[0],
                 style = document.createElement('style');
 
@@ -13,8 +13,8 @@ define([], function(){
             }
 
             head.appendChild(style);
-        }
+        });
+
+        load();
     }
-    
-    return css;
 });
