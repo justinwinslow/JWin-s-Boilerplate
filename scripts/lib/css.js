@@ -12,6 +12,7 @@ define(['text'], {
                 var head = document.getElementsByTagName('head')[0],
                     style = document.createElement('style');
 
+                //Set it's "type" attribute
                 style.type = 'text/css';
 
                 //Check if the element has the styleSheet property
