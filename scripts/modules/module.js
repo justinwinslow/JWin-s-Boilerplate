@@ -30,7 +30,7 @@ function($, _, Backbone, Modernizr) {
         options: {}
     });
 
-    // Create an for object desparate views
+    // Create an object for desparate views
     module.view = {};
 
     if(Modernizr.canvas){

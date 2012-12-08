@@ -12,7 +12,8 @@ requirejs.config({
     paths: {
         // Libraries
         jquery: 'lib/jquery',
-        underscore: 'lib/underscore',
+        //underscore: 'lib/underscore', I left this as a comment so you can see how aliasing paths can make "upgrades" easier
+        underscore: 'lib/lodash',
         backbone: 'lib/backbone',
         handlebars: 'lib/handlebars',
         modernizr: 'lib/modernizr',
