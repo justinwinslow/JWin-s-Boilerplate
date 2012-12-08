@@ -28,11 +28,9 @@ requirejs.config({
             exports: 'Backbone'
         },
         underscore: {
-            deps: ['jquery'],
             exports: '_'
         },
         handlebars: {
-            deps: [],
             exports: 'Handlebars'
         },
         modernizr: {
