@@ -22,6 +22,7 @@ From the project root run "r.js -o build.js". Assets are built to scripts.build/
 
 #### ToDo
 
+* Use package manager for libraries
 * Set up testing
 * Automate build/path switching
 * Integrate handlebars template
