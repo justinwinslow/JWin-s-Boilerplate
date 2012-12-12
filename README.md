@@ -22,6 +22,7 @@ From the project root run "r.js -o build.js". Assets are built to scripts.build/
 
 #### ToDo
 
+* excanvas modernizr example is no longer functional so I need to set up a different example
 * Set up testing
 * Automate build/path switching
 * Integrate handlebars template
