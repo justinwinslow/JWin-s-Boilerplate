@@ -18,11 +18,9 @@
       "jquery": null,
       "modernizr": null,
       "backbone": null,
-      "require": null,
       "text": null,
       "css": null,
-      "handlebars": null,
-      "excanvas": null
+      "handlebars": null
     }
   }
 }
