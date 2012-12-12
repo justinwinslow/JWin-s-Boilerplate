@@ -15,7 +15,6 @@
                 'backbone',
                 'handlebars',
                 'modernizr',
-                'excanvas',
                 'css',
                 'module'
             ],

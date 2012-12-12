@@ -10,7 +10,7 @@ This is basically just a playground for boilerplate experimentations. Not recomm
 
 #### Getting Set Up
 
-From the project root folder run "npm install" to install required node packages
+From the project root folder run "npm install" to install required node packages. When that finishes run "jam install" to grab front end dependencies.
 
 #### Running the Server
 
@@ -22,7 +22,6 @@ From the project root run "r.js -o build.js". Assets are built to scripts.build/
 
 #### ToDo
 
-* Use package manager for libraries
 * Set up testing
 * Automate build/path switching
 * Integrate handlebars template
