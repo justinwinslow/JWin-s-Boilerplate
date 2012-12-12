@@ -1,16 +1,22 @@
 #!/bin/bash          
 echo -e "\nInstall JWin's Boilerplate\n"
 
-function installNode {
-	echo -e "Node.js not found so I'll install it for you.\n"
+if [ $1 = 'nonode' ]; then
+	echo -e "You've selected to skip installing node.\n"
+else
 
-	sudo apt-get -y install python-software-properties
-	sudo add-apt-repository ppa:chris-lea/node.js
-	sudo apt-get update
-	sudo apt-get -y install nodejs npm
-}
+	function installNode {
+		echo -e "Node.js not found so I'll install it for you.\n"
 
-command -v "node" >/dev/null 2>&1 || { installNode; }
+		sudo apt-get -y install python-software-properties
+		sudo add-apt-repository ppa:chris-lea/node.js
+		sudo apt-get update
+		sudo apt-get -y install nodejs npm
+	}
+
+	command -v "node" >/dev/null 2>&1 || { installNode; }
+
+fi
 
 NODE_VERSION=`node -v`
 
