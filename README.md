@@ -3,14 +3,9 @@ JWin's Boilerplate
 
 This is basically just a playground for boilerplate experimentations. Not recommended for public consumption.
 
-#### Requirements
-
-* Node
-* NPM
-
 #### Getting Set Up
 
-From the project root folder run "npm install" to install required node packages. When that finishes run "jam install" to grab front end dependencies.
+From the project root folder run "bash install.sh" to automagically get the stack set up properly. This script will install node.js and npm and resolve all other project dependencies.
 
 #### Running the Server
 
