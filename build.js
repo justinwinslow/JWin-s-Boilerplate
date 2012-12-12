@@ -1,8 +1,8 @@
 ({
-    baseURL: 'scripts',
-    dir: 'scripts.build',
+    baseURL: 'app',
+    dir: 'app.build',
 
-    mainConfigFile: 'scripts/init.js',
+    mainConfigFile: 'app/init.js',
 
     modules: [
         {
