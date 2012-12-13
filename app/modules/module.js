@@ -9,7 +9,8 @@ define([
     'modernizr',
     'css!../styles/module.css'
 ],
-function($, _, Backbone, Modernizr) {
+function($, _, Backbone, Modernizr, css) {
+    if (debug) console.log('css: ', css);
     // Create object to store the entire module
     var module = {};
 
