@@ -7,9 +7,10 @@ define([
     'underscore',
     'backbone',
     'modernizr',
-    'css!../styles/module.css'
+    'css!../styles/module.css',
+    'modules/submodule/submodule'
 ],
-function($, _, Backbone, Modernizr, css) {
+function($, _, Backbone, Modernizr, css, submodule) {
     if (debug) console.log('css: ', css);
     // Create object to store the entire module
     var module = {};
@@ -75,6 +76,7 @@ function($, _, Backbone, Modernizr, css) {
 
                 this.$el.on('click', function(event){
                     if (debug) console.log(self.$el.text() + ' 0');
+                    submodule.method();
                 });
             },
             destroy: function(){
