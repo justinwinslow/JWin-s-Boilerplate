@@ -1,4 +1,4 @@
-#!/bin/bash          
+#!/bin/bash
 echo -e "\nInstall JWin's Boilerplate\n"
 
 if [ $1 = 'nonode' ]; then
@@ -23,10 +23,10 @@ NODE_VERSION=`node -v`
 echo -e "Installed node version: $NODE_VERSION\n"
 
 echo -e "Installing node packages...\n"
-sudo npm install
+npm install
 
 echo -e "Installing front end packages...\n"
-sudo jam install
+bower install
 
 echo -e "\nInstallation complete. Run \"node server.js\" to get the server running."
 echo -e "Then point your browser to http://localhost:5000 to view the application.\n"
