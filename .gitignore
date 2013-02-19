@@ -5,6 +5,8 @@ node_modules
 lib
 components
 
+*.css
+
 build
 *.build
 
