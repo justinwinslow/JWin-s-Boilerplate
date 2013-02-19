@@ -3,8 +3,8 @@ var express = require('express'),
 		app = express();
 
 app.use(stylus.middleware({
-  src: __dirname + '/styles',
-  dest: __dirname + '/styles'
+  debug: true,
+  src: __dirname
 }));
 
 app.use(express.static(__dirname));
