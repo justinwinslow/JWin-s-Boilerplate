@@ -8,7 +8,7 @@ window.debug = true;
 if (debug) console.log('init');
 
 // Require config
-requirejs.config({
+require.config({
     paths: {
         // Libraries
         jquery: 'components/jquery/jquery',
@@ -40,7 +40,7 @@ requirejs.config({
 });
 
 // Start app
-requirejs(
+require(
     [
         'jquery',
         'underscore',
