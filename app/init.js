@@ -11,14 +11,14 @@ if (debug) console.log('init');
 requirejs.config({
     paths: {
         // Libraries
-        jquery: '../components/jquery/jquery',
-        //underscore: '../components/underscore', I left this as a comment so you can see how aliasing paths can make "upgrades" easier
-        underscore: '../components/lodash/lodash',
-        backbone: '../components/backbone/backbone',
-        handlebars: '../components/handlebars/handlebars',
-        modernizr: '../components/modernizr/modernizr',
-        text: '../components/text/text',
-        css: '../components/css/css',
+        jquery: 'components/jquery/jquery',
+        //underscore: 'components/underscore', I left this as a comment so you can see how aliasing paths can make "upgrades" easier
+        underscore: 'components/lodash/lodash',
+        backbone: 'components/backbone/backbone',
+        handlebars: 'components/handlebars/handlebars',
+        modernizr: 'components/modernizr/modernizr',
+        text: 'components/text/text',
+        css: 'components/css/css',
         // Modules
         somemodule: 'modules/module'
     },
