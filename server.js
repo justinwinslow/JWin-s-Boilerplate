@@ -1,12 +1,18 @@
 var express = require('express'),
-	app = express();
+		stylus = require('stylus'),
+		app = express();
+
+app.use(stylus.middleware({
+  src: __dirname + '/styles',
+  dest: __dirname + '/styles'
+}));
+
+app.use(express.static(__dirname));
 
 app.get('/', function(req, res){
 	res.status(200).sendfile('index.html');
 });
 
-app.use(express.static( __dirname ));
+app.listen(8000);
 
-app.listen(5000);
-
-console.log('Listening on port 5000');
+console.log('Listening on port 8000');

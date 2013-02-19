@@ -10,19 +10,6 @@
     "requirejs": "2.x",
     "mocha": "1.x",
     "chai": "",
-    "less": ""
-  },
-  "jam": {
-    "baseUrl": "app",
-    "packageDir": "app/lib",
-    "dependencies": {
-      "lodash": null,
-      "jquery": null,
-      "modernizr": null,
-      "backbone": null,
-      "text": null,
-      "css": null,
-      "handlebars": null
-    }
+    "stylus": ""
   }
 }
