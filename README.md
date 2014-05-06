@@ -1,3 +1,5 @@
+*** A lot of this is dumb or out dated. Consider this a museum exhibit more than a useful repo *** 
+
 JWin's Boilerplate
 ===================
 
