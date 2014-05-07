@@ -15,7 +15,7 @@ Use your favorite package manager to install nodejs and npm. Then run `npm insta
 
 #### Running the Server
 
-From the project root run `node server.js`. The server is just a pass through right now. There is no error handling or any other smarts at all. The port is set to 5000 by default.
+From the project root run `node server.js`. The server is just a pass through right now. There is no error handling or any other smarts at all. The port is set to 8000 by default.
 
 #### Running a Build
 
