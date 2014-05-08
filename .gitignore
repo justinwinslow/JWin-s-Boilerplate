@@ -3,7 +3,7 @@
 
 node_modules
 lib
-components
+bower_components
 
 *.css
 

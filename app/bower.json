@@ -8,8 +8,8 @@
     "modernizr": null,
     "backbone": null,
     "text": null,
-    "css": null,
+    "css": "git@github.com:justinwinslow/css.git",
     "handlebars": null,
-    "require": null
+    "requirejs": null
   }
 }
